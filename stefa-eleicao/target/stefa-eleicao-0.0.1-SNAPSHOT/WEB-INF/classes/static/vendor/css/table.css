@@ -1,0 +1,17 @@
+.message-table-correct{
+	text-align:justify;
+	text-align: center;
+	font-family: sans-serif;
+	color: blue;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.message-table-incorret{
+	text-align:justify;
+	text-align: center;
+	font-family: sans-serif;
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+}

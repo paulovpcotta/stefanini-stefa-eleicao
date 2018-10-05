@@ -1,0 +1,34 @@
+<body>
+<div id="wrap">
+	<div ng-controller="abstractController"><menu></menu></div>
+	<div class="text-app-titulo">| Listar | Grupos de Fraudadores</div>
+	<form ng-controller="listFaceGroupLargeController">
+    	<div class="contentform">
+			<div ng-class="cssMessage" ng-show="visibleMessage">{{messages}}</div>
+			
+			<div style="width:650px; height:300px; overflow: auto; margin-top: 40px;">
+				<table>
+							<thead>
+								<tr>
+									<th>Nome do grupo</th>
+									<th>Nome detalhado</th>
+									<th>Detalhes</th>
+									<th>Ações</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in listGroupsLarge">
+									<td class="user-name">{{item.facePersonGroupID}}</td>
+									<td class="user-name">{{item.name}}</td>
+									<td class="user-name">{{item.userData}}</td>
+									<td class="user-mobile">
+										<button type="button" class="acoes-excluir" ng-click="inactiveCompany(cpn)">Remove</button><br>
+									</td>
+								</tr>
+							</tbody>
+				</table>
+			</div>
+		</div>
+	</form>
+</div>
+</body>

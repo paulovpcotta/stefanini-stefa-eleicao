@@ -1,0 +1,40 @@
+<body>
+<div id="wrap">
+	<div ng-controller="abstractController"><menu></menu></div>
+	<div class="text-app-titulo">| Cadastro | Validação | Grupos de Fraudadores</div>
+	<form ng-controller="saveFaceGroupController">
+    	<div class="contentform">
+			<div ng-class="cssMessage" ng-show="visibleMessage">{{messages}}</div>
+			
+			<div class="leftcontact">
+				<div class="form-group">
+			        <p>Grupos <span>*</span></p>
+					<div>
+					  <select ng-model="group" ng-change="getGroup(group)">
+					    <option ng-repeat="item in listGroupsLarge" value="{{item}}">{{item.nameGroup}}</option>
+					  </select>
+					</div>
+                	<div class="validation"></div>
+				</div>
+			</div>
+			
+			<div class="rightcontact">
+				<fieldset title="Fotos da Galeria">
+					<legend>Fotos para treino do grupo</legend>
+					<div class="contentform space-blank">
+						<div class="form-group">
+							<input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this, 0)" id="photo-upload" placeholder="Selecione uma ou mais fotos de uma vez"
+							multiple="multiple"/>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			
+			<div>
+				<button type="button" class="bouton-contact" ng-click="save()">Cadastrar</button>
+				<button type="button" class="bouton-back" ng-click="train()">Treinar</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
